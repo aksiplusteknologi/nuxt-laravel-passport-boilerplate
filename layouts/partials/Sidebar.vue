@@ -4,7 +4,7 @@
         <nav class="sidebar dark_sidebar">
             <div class="logo d-flex justify-content-between">
                 <a class="large_logo" href="/index-2.html">
-                    <img src="/img/logo_white.png" alt />
+                    <img src="/img/logo-aksiplus.png" alt />
                 </a>
                 <a class="small_logo" href="/index-2.html">
                     <img src="/img/mini_logo.png" alt />
