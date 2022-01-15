@@ -150,9 +150,13 @@ export default {
     },
     methods: {
         async logout() {
-            console.log("you are going to log out");
-            await this.$auth.logout();
-            this.$router.push("/");
+            await this.$auth.logout().then(() => {
+                localStorage.removeItem("auth._token.local");
+
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            });
         },
     },
 };

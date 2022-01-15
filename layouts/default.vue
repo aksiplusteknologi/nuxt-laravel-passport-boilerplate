@@ -26,6 +26,8 @@ import Navbar from "~~/layouts/partials/Navbar";
 import Sidebar from "~~/layouts/partials/Sidebar";
 
 export default {
+    name: "default-layout",
+
     computed: {
         ...mapGetters(["user", "isLoggedIn"]),
     },
