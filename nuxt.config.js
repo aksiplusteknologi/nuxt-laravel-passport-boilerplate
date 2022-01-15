@@ -36,9 +36,41 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
+    '@nuxtjs/toast'
   ],
+
+  toast: {
+    position: 'top-right',
+    register: [ // Register custom toasts
+      {
+        name: 'my-error',
+        message: 'Oops...Something went wrong',
+        options: {
+          type: 'error'
+        }
+      }
+    ]
+},
+
+
+  axios: {
+    baseURL: 'http://localhost:8000/api'
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: 'api/auth/login', method: 'post', propertyName: 'token' },
+          user: { url: 'api/user', method: 'get', propertyName: 'data' },
+          logout: false
+        }
+      }
+    }
+  },
 }

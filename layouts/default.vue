@@ -20,13 +20,30 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 import Navbar from "~~/layouts/partials/Navbar";
 import Sidebar from "~~/layouts/partials/Sidebar";
 
 export default {
+    computed: {
+        ...mapGetters(["user", "isLoggedIn"]),
+    },
+    methods: {
+        async logout() {
+            await this.$auth.logout();
+            this.$router.push("/auth/login");
+        },
+    },
     components: {
         Navbar,
         Sidebar,
+    },
+
+    mounted() {
+        if (!this.isLoggedIn) {
+            this.$router.push("auth/login");
+        }
     },
 };
 </script>
