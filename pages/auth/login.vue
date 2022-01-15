@@ -37,7 +37,6 @@
                                         type="text"
                                         class="form-control"
                                         placeholder="Input Your Username"
-                                        required
                                     />
                                 </div>
                                 <div class="form-group">
@@ -47,7 +46,6 @@
                                         type="password"
                                         class="form-control"
                                         placeholder="Input Your Password"
-                                        required
                                     />
                                 </div>
                                 <div class="form-group">
@@ -100,22 +98,16 @@ export default {
             } else if (this.form.password == "") {
                 alert("Password can't be empty");
             } else {
-                this.$store
-                    .dispatch("login", this.form)
-                    .then((res) => {
-                        if (res.data.status == 1) {
-                            this.$swal(res.data.message, "Welcome");
-                            window.location = "/";
-                        } else if (res.data.status == 0) {
-                            this.$swal({
-                                title: "Something Wrong",
-                                text: res.data.message,
-                                icon: "warning",
-                                button: "Ok",
-                            });
-                        }
-                    })
-                    .catch((err) => {});
+                try {
+                    let response = await this.$auth.loginWith("local", {
+                        data: this.form,
+                    });
+                    console.log(response);
+
+                    this.$router.push("/");
+                } catch (e) {
+                    this.errors = e.response.data.errors;
+                }
             }
         },
     },

@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid no-gutters">
-        <div class="row">
+        <div class="row" v-if="isLoggedIn">
             <div class="col-lg-12 p-0">
                 <div class="header_iner d-flex justify-content-between align-items-center">
                     <div class="sidebar_icon d-lg-none">
@@ -118,20 +118,19 @@
                         </div>
                         <div class="profile_info d-flex align-items-center">
                             <div class="profile_thumb mr_20">
-                                <img
-                                    src="https://avatars.githubusercontent.com/u/8235099?v=4"
-                                    alt="#"
-                                />
+                                <img :src="user.avatar" alt="#" />
                             </div>
                             <div class="author_name">
-                                <h4 class="f_s_15 f_w_500 mb-0">Antonio Saiful Islam</h4>
-                                <p class="f_s_12 f_w_400">CEO & Owner</p>
+                                <h4 class="f_s_15 f_w_500 mb-0">{{ user.name }}</h4>
+                                <p
+                                    class="f_s_12 f_w_400"
+                                >{{ user.username ? user.username : user.email }}</p>
                             </div>
                             <div class="profile_info_iner">
                                 <div class="profile_info_details">
                                     <a href="/#">My Profile</a>
                                     <a href="/#">Settings</a>
-                                    <a href="/#">Log Out</a>
+                                    <a @click="logout">Log Out</a>
                                 </div>
                             </div>
                         </div>
@@ -143,7 +142,21 @@
 </template>
 
 <script>
-export default {};
+import { mapGetters } from "vuex";
+export default {
+    name: "app-navbar",
+
+    computed: {
+        ...mapGetters(["user", "isLoggedIn"]),
+    },
+    methods: {
+        async logout() {
+            console.log("you are going to log out");
+            await this.$auth.logout();
+            this.$router.push("/");
+        },
+    },
+};
 </script>
 
 <style>
