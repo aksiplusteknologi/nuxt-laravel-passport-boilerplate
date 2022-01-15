@@ -12,7 +12,7 @@
                     <div class="header_right d-flex justify-content-between align-items-center">
                         <div class="header_notification_warp d-flex align-items-center">
                             <li>
-                                <a class="bell_notification_clicker nav-link-notify" href="/#">
+                                <a class="bell_notification_clicker nav-link-notify" href>
                                     <img src="/img/icon/bell.svg" alt />
                                     <!-- <span>2</span> -->
                                 </a>
@@ -25,12 +25,12 @@
                                         <!-- single_notify  -->
                                         <div class="single_notify d-flex align-items-center">
                                             <div class="notify_thumb">
-                                                <a href="/#">
+                                                <a href>
                                                     <img src="/img/staf/2.png" alt />
                                                 </a>
                                             </div>
                                             <div class="notify_content">
-                                                <a href="/#">
+                                                <a href>
                                                     <h5>Cool Marketing</h5>
                                                 </a>
                                                 <p>Lorem ipsum dolor sit amet</p>
@@ -39,12 +39,12 @@
                                         <!-- single_notify  -->
                                         <div class="single_notify d-flex align-items-center">
                                             <div class="notify_thumb">
-                                                <a href="/#">
+                                                <a href>
                                                     <img src="/img/staf/4.png" alt />
                                                 </a>
                                             </div>
                                             <div class="notify_content">
-                                                <a href="/#">
+                                                <a href>
                                                     <h5>Awesome packages</h5>
                                                 </a>
                                                 <p>Lorem ipsum dolor sit amet</p>
@@ -53,12 +53,12 @@
                                         <!-- single_notify  -->
                                         <div class="single_notify d-flex align-items-center">
                                             <div class="notify_thumb">
-                                                <a href="/#">
+                                                <a href>
                                                     <img src="/img/staf/3.png" alt />
                                                 </a>
                                             </div>
                                             <div class="notify_content">
-                                                <a href="/#">
+                                                <a href>
                                                     <h5>what a packages</h5>
                                                 </a>
                                                 <p>Lorem ipsum dolor sit amet</p>
@@ -67,12 +67,12 @@
                                         <!-- single_notify  -->
                                         <div class="single_notify d-flex align-items-center">
                                             <div class="notify_thumb">
-                                                <a href="/#">
+                                                <a href>
                                                     <img src="/img/staf/2.png" alt />
                                                 </a>
                                             </div>
                                             <div class="notify_content">
-                                                <a href="/#">
+                                                <a href>
                                                     <h5>Cool Marketing</h5>
                                                 </a>
                                                 <p>Lorem ipsum dolor sit amet</p>
@@ -81,12 +81,12 @@
                                         <!-- single_notify  -->
                                         <div class="single_notify d-flex align-items-center">
                                             <div class="notify_thumb">
-                                                <a href="/#">
+                                                <a href>
                                                     <img src="/img/staf/4.png" alt />
                                                 </a>
                                             </div>
                                             <div class="notify_content">
-                                                <a href="/#">
+                                                <a href>
                                                     <h5>Awesome packages</h5>
                                                 </a>
                                                 <p>Lorem ipsum dolor sit amet</p>
@@ -95,12 +95,12 @@
                                         <!-- single_notify  -->
                                         <div class="single_notify d-flex align-items-center">
                                             <div class="notify_thumb">
-                                                <a href="/#">
+                                                <a href>
                                                     <img src="/img/staf/3.png" alt />
                                                 </a>
                                             </div>
                                             <div class="notify_content">
-                                                <a href="/#">
+                                                <a href>
                                                     <h5>what a packages</h5>
                                                 </a>
                                                 <p>Lorem ipsum dolor sit amet</p>
@@ -109,7 +109,7 @@
                                     </div>
                                     <div class="nofity_footer">
                                         <div class="submit_button text-center pt_20">
-                                            <a href="/#" class="btn_1 green">See More</a>
+                                            <a href class="btn_1 green">See More</a>
                                         </div>
                                     </div>
                                 </div>
@@ -128,8 +128,7 @@
                             </div>
                             <div class="profile_info_iner">
                                 <div class="profile_info_details">
-                                    <a href="/#">My Profile</a>
-                                    <a href="/#">Settings</a>
+                                    <NuxtLink to="/profile">My Profile</NuxtLink>
                                     <a @click="logout">Log Out</a>
                                 </div>
                             </div>

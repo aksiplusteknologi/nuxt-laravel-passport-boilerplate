@@ -15,14 +15,14 @@
             </div>
             <ul id="sidebar_menu">
                 <li class>
-                    <a href="/#" aria-expanded="false">
+                    <NuxtLink to="/" aria-expanded="false">
                         <div class="nav_icon_small">
                             <img src="/img/menu-icon/1.svg" alt />
                         </div>
                         <div class="nav_title">
                             <span>Dashboard</span>
                         </div>
-                    </a>
+                    </NuxtLink>
                 </li>
 
                 <li class>

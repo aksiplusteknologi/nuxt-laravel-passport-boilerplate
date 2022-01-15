@@ -5,13 +5,13 @@
                 <button class="btn btn-primary">Create Report</button>
             </template>
         </Header>
-
-        <div>ok</div>
     </div>
 </template>
 
 <script>
 export default {
     name: "IndexPage",
+
+    methods: {},
 };
 </script>
